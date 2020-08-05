@@ -1,6 +1,6 @@
 #pragma once
 
-class Config {
+class Conf {
 public:
 	int winWidth = 500;
 	int winHeight = 500;
