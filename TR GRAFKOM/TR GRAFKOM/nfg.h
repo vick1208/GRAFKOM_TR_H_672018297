@@ -25,7 +25,7 @@ private:
 	char junk[200];
 
 	bool loadFile() {
-		// Opening file
+		// Buka File
 		fopen_s(&loadModel, "Woman1.nfg", "r");
 		if (!loadModel) {
 			return false;
@@ -34,7 +34,7 @@ private:
 	}
 
 	void loadNrVertex() {
-		// Get total node
+		// Mendapatkan total node
 		fscanf_s(this->loadModel, "NrVertices : %d", &totalNrVertex);
 		//printf("NrVertices:%d\n", totalNrVertex);
 	}
@@ -42,7 +42,7 @@ private:
 	void loadCoordinate() {
 		for (int i = 0; i < totalNrVertex; i++) {
 
-			// Read value each row
+			// Membaca nilai pada setiap baris 
 			fscanf_s(loadModel, "%*d. pos:[%f, %f, %f]; norm:[%f, %f, %f]; binorm:[%f, %f, %f]; tgt:[%f, %f, %f]; uv:[%f, %f];", &px, &py, &pz, &nx, &ny, &nz, &bx, &by, &bz, &tx, &ty, &tz, &u, &v);
 
 			this->myVertex[i].pos.x = px;
