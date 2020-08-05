@@ -15,21 +15,21 @@ typedef union PixelInfo {
     };
 } *PPixelInfo;
 
-class Tga {
+class Model {
 private:
     vector<std::uint8_t> Pixels;
     bool ImgComp;
     uint32_t width, height, size, BitsPerPixel;
 
 public:
-    Tga(const char* FilePath);
+    Model(const char* FilePath);
     vector<std::uint8_t> GetPixels() { return this->Pixels; }
     uint32_t GetWidth() const { return this->width; }
     uint32_t GetHeight() const { return this->height; }
     bool HasAlphaChannel() { return BitsPerPixel == 32; }
 };
 
-Tga::Tga(const char* FilePath) {
+Model::Model(const char* FilePath) {
     fstream hFile(FilePath, ios::in | ios::binary);
     if (!hFile.is_open()) { throw std::invalid_argument("File Not Found."); }
 
