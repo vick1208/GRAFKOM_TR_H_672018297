@@ -4,7 +4,11 @@ TR ini dilakukan untuk memenuhi penugasan TR Grafika Komputer
 
 
 Anggota (Aktif) :
-Vicky Alexander Susanto (Ketua)
+
+Vicky Alexander Susanto (Ketua Proyek)
+
 Anggota (Belum Aktif):
-Adi\n
+
+Adi
+
 Nehemia
