@@ -19,7 +19,7 @@ float ymov = 0.0f;
 float zmov = 0.0f;
 
 void LoadTextures() {
-	Tga file = Tga("Woman1.tga");
+	Model file = Model("Woman1.tga");
 
 	glEnable(GL_TEXTURE_2D);
 
@@ -31,8 +31,8 @@ void LoadTextures() {
 }
 
 void transform() {
-	glRotatef(xrot, 1.0f, 0.0f, 0.0f); // Rotating horizontal
-	glRotatef(yrot, 0.0f, 1.0f, 0.0f); // Rotating vertical
+	glRotatef(xrot, 1.0f, 0.0f, 0.0f); // Putar horizontal
+	glRotatef(yrot, 0.0f, 1.0f, 0.0f); // Putar vertical
 	glScalef(scale, scale, scale); // Perskalaan
 	glTranslatef(xmov, ymov, zmov); // Translasi
 }
@@ -93,7 +93,7 @@ void reshape(int w, int h)
 
 	gluPerspective(20.0, w / h, 0.1f, 100.0f);
 
-	//glTranslatef(0, 0, 0);
+	
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -107,34 +107,41 @@ void myinit() {
 	glClearDepth(1.0f);
 }
 
-void keyboardControl(unsigned char key, int x, int y) {
+void keyboard(unsigned char key, int x, int y) {
 	switch (key) {
 	case 'a':
+	case 'A':
 		yrot += 5.0f;
 		break;
 	case 'd':
+	case 'D':
 		yrot -= 5.0f;
 		break;
 	case 'w':
+	case 'W':
 		xrot += 5.0f;
 		break;
 	case 's':
+	case 'S':
 		xrot -= 5.0f;
 		break;
-	case 'q':
+	case 'p':
+	case 'P':
 		if (anim) {
 			anim = false;
-			printf("Animated!");
+			printf("Stop\n");
 		}
 		else {
-			printf("Animated!");
+			printf("Play\n");
 			anim = true;
 		}
 		break;
-	case '1':
+	case 'B':
+	case 'b':
 		scale += 0.2f;
 		break;
-	case '2':
+	case 'M':
+	case 'm':
 		scale -= 0.2f;
 		break;
 	case 27:
@@ -145,7 +152,7 @@ void keyboardControl(unsigned char key, int x, int y) {
 	glutPostRedisplay();
 }
 
-void keyboardSpecialControl(int key, int x, int y) {
+void keyboardSpecial(int key, int x, int y) {
 
 	switch (key) {
 	case GLUT_KEY_LEFT:
@@ -169,7 +176,7 @@ void animasi(int) {
 	glutTimerFunc(1000 / 30, animasi, 0);
 
 	if (anim)
-		yrot -= 1.0f;
+		yrot -= 3.0f;
 	else
 		yrot = yrot;
 
@@ -189,15 +196,16 @@ int main(int argc, char** argv) {
 
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
-	glutKeyboardFunc(keyboardControl);
-	glutSpecialFunc(keyboardSpecialControl);
+	glutKeyboardFunc(keyboard);
+	glutSpecialFunc(keyboardSpecial);
 	glutTimerFunc(0, animasi, 0);
 
-	cout << " << Keterangan" << endl << endl;
+	cout << " Keterangan :" << endl << endl;
 	cout << " >> W, A, S, D untuk rotasi" << endl;
-	cout << " >> 1, 2 untuk scaling" << endl;
+	cout << " >> B, M untuk scaling" << endl;
 	cout << " >> Panah untuk move camera" << endl;
-
+	cout << " >> P untuk melakukan animasi" << endl;
+	cout << " >> Esc untuk keluar"<< endl;
 	myinit();
 	glutMainLoop();
 
