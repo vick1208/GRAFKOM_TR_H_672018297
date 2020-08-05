@@ -185,15 +185,14 @@ void animasi(int) {
 
 int main(int argc, char** argv) {
 
-	Config conf;
+	Conf config;
 
 	glutInit(&argc, argv);
 
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	glutInitWindowSize(conf.winWidth, conf.winHeight);
-	glutInitWindowPosition(conf.winPosX, conf.winPosY);
+	glutInitWindowSize(config.winWidth, config.winHeight);
+	glutInitWindowPosition(config.winPosX, config.winPosY);
 	glutCreateWindow("TR GRAFKOM");
-
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);
