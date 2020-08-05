@@ -145,7 +145,7 @@ void keyboard(unsigned char key, int x, int y) {
 		scale -= 0.2f;
 		break;
 	case 27:
-		exit(1);
+		exit(0);
 		break;
 	}
 
