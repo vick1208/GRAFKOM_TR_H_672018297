@@ -204,11 +204,10 @@ int main(int argc, char** argv) {
 	cout << " >> W, A, S, D untuk rotasi" << endl;
 	cout << " >> B, M untuk scaling" << endl;
 	cout << " >> Panah untuk move camera" << endl;
-	cout << " >> P untuk melakukan animasi" << endl;
+	cout << " >> P untuk Play/Stop animasi" << endl;
 	cout << " >> Esc untuk keluar"<< endl;
 	myinit();
 	glutMainLoop();
 
 	return 0;
-
 }
