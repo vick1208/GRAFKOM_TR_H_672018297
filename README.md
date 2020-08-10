@@ -15,5 +15,5 @@ Nehemia
 
 NB: 
 
-TR ini dilakukan karena nanggung dengan TR Dosen.
+TR ini dilakukan karena nanggung dengan dosen Grafkom.
 NILAI TR : 54 
