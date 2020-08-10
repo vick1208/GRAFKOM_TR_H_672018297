@@ -12,3 +12,8 @@ Anggota (Belum Aktif):
 Adi
 
 Nehemia
+
+NB: 
+
+TR ini dilakukan karena nanggung dengan TR Dosen.
+NILAI TR : 54 
