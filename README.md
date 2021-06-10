@@ -7,7 +7,7 @@ Anggota (Aktif) :
 
 Vicky Alexander Susanto (Ketua Proyek)
 
-Anggota (Belum Aktif):
+Anggota (Tidak Aktif):
 
 Adi
 
