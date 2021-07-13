@@ -17,4 +17,4 @@ NB:
 
 TR ini dilakukan karena nanggung dengan dosen Grafkom.
 
-NILAI TR : 54 
+
